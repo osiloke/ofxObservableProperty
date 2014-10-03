@@ -9,8 +9,8 @@
 #include "intProperty.h"
 
 void IntProperty::setValue(int value){
-    this->value = value;
     PropertyValue::setValue();
+    this->value = value;
     static PropertyEvent newEvent;
     newEvent.property = this;
     ofNotifyEvent(PropertyEvent::events, newEvent);

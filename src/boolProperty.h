@@ -22,8 +22,8 @@ public:
         this->value = val; 
     };
     void setValue(bool value){
-        this->value = value;
         PropertyValue::setValue();
+        this->value = value;
         static PropertyEvent newEvent;
         newEvent.property = this;
         ofNotifyEvent(PropertyEvent::events, newEvent);
